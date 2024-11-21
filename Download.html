@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosya İndirildi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f2f2f2;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 80%;
+            max-width: 500px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .container h1 {
+            font-size: 3rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            animation: slideInFromTop 0.8s ease-in-out;
+        }
+        .container p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 10px;
+            animation: fadeInText 1.2s ease-in-out;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ed4242;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // Dosya indirme işlemini başlat
+            const downloadLink = "./Revorce Setup.exe"; // Doğru dosya yolunu yaz
+            const a = document.createElement('a');
+            a.href = downloadLink;
+            a.download = "Revorce Setup.exe";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Dosya Başarıyla İndirildi!</h1>
+        <p>İndirmeniz otomatik olarak başlatıldı. Eğer indirme başlamazsa, <a href="./Revorce Setup.exe">buraya tıklayın</a>.</p>
+        <a href="https://www.clasare.com.tr" class="button">Web Sitemize Dön</a>
+    </div>
+</body>
+</html>
